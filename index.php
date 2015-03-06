@@ -5,6 +5,7 @@ require_once 'config/config.php';
 require_once VIEW . 'View.class.php';
 require_once VIEW . 'templates/Template.class.php';
 require_once CONTROLLER . 'Controller.class.php';
+
 //recebe os dados da url
 if (isset($_GET['q']))
     $q = $_GET['q'];
@@ -13,8 +14,8 @@ else
 $parametros = '';
 $argumentos = '';
 
-//determina a posi��o da primeira / para separar o Controller dos Argumentos e 
-//M�todo.
+//determina a posição da primeira / para separar o Controller dos Argumentos e 
+//Método.
 $posicaoController = strpos($q, '/');
 if ($posicaoController) {
     $controller = substr($q, 0, $posicaoController);
@@ -30,7 +31,7 @@ $strC = str_replace(' ', '', $str) . 'Controller';
 if($strC == 'Controller')
     $strC = 'HomeController';
 
-//determina a posi��o da primeira / dos par�metros para separar Método de 
+//determina a posição da primeira / dos parâmetros para separar Método de 
 //Argumentos.
 $posicaoMetodo = strpos($parametros, '/');
 if ($posicaoMetodo) {

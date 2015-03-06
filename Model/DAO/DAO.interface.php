@@ -2,9 +2,9 @@
 
 interface DAO {
     public function getAll();
-    public function getById(int $id);
+    public function getById($id);
     public function getByParameter(Array $fields, Array $values);
-    public function insert(Object $obj);
-    public function update(Object $obj);
-    public function deleteById(int $obj);
+    public function insert($obj);
+    public function update($obj, $where);
+    public function delete($where);
 }

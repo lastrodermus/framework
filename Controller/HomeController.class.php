@@ -1,5 +1,6 @@
 <?php
-
+require_once MODEL . 'Teste.class.php';
+require_once UTIL . 'CreateDAO.class.php';
 class HomeController extends Controller {
 
     public function __construct($urlParameters = null) {
@@ -7,18 +8,21 @@ class HomeController extends Controller {
     }
 
     public function getHome() {
+                
+        $view = new View('home');
+        $parameters = array('x' => 'a');
+        $list = 'XPTO';
+        $val = array('olá', 'oi');
         
-//        
-//          $view = new View('home');
-//          echo $view->getPage();
-//        $parameters = array('p1' => 'a', 'p2' => 'b');
-//        $params = $this->changeToArray($parameters);
-//        echo $view->getPage($params);
-        require_once MODEL . 'Teste.class.php';
-        $t = new Teste();
+        $l = array('olá', 'combinar', 'item 3', 'item 4');
+        $list2 = 'LISTA';
         
-        var_dump($t->testar());
-        
+        $view->setList($list, $val);
+        $view->setList($list2, $l);
+        echo $view->getPage($parameters);
+//        $t = new Teste();
+//        $t->testar();
+//        $d = new CreateDAO();
+//        $d->criarDAO();
     }
-
 }
